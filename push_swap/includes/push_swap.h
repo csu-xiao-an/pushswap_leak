@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 23:11:32 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/09 14:48:49 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/17 19:58:06 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int		find_min(t_stack *a);
 int		find_max(t_stack *a);
 void	find_mid(t_stack *a, t_struct *nbr);
 int		is_sorted(t_stack *a);
+int		find_range(t_struct *nbr, int div);
 
 void	print_stack(struct s_stack *stack);
 /*

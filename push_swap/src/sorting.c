@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/16 13:01:59 by thomkim          ###   ########.fr       */
+/*   Updated: 2019/08/17 21:49:36 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,37 +46,74 @@ void	sorting_1(t_stack *a)
 		else
 			ra(a);
 	}
-    free(nbr);
+	free(nbr);
+}
+
+void	chunk_sorting(t_stack *a, int range)
+{
+	int	top_min;
+	int	bot_min;
+	while ()
+	{
+	}
 }
 
 void	sorting_2(t_stack *a, t_stack *b)
 {
-	while (a->top)
-	{
-		int	min = find_min(a);
-		int	min_index = find_index(a, min);
-		if (min_index < (check_nbr(a) / 2 + 1))
-		{
-			while (min_index > 1)
-			{
-				ra(a);
-				min_index--;
-			}
-		}
-		else
-		{
-			while (min_index != check_nbr(a) + 1)
-			{
-				rra(a);
-				min_index++;
-			}
-		}
-		pb(a, b);
-	}
-	while (!isEmpty(b))
-		pa(a, b);
-}
+	t_struct	*nbr;
+	int			range;
+	int			i;
 
+	nbr = init_nbr();
+	check_value(a, nbr);
+	range = 0;
+	i = 1;
+	if (check_nbr(a) <= 100) {
+		range = find_range(nbr, 5);
+		while (!isEmpty(a))
+		{
+			chunk_sorting(a, range);
+			i++;
+			range = i * range;
+		}
+	}
+	else {
+		range = find_range(nbr, 10);
+	}
+	ft_printf("range = %d, nbr->min = %d, nbr->max = %d\n", range, nbr->min, nbr->max);
+	ft_printf("null = *s\n", b->top);
+}
+ 
+/*
+   void	sorting_2(t_stack *a, t_stack *b)
+   {
+   while (a->top)
+   {
+   int	min = find_min(a);
+   int	min_index = find_index(a, min);
+   if (min_index < (check_nbr(a) / 2 + 1))
+   {
+   while (min_index > 1)
+   {
+   ra(a);
+   min_index--;
+   }
+   }
+   else
+   {
+   while (min_index != check_nbr(a) + 1)
+   {
+   rra(a);
+   min_index++;
+   }
+   }
+   pb(a, b);
+   }
+   while (!isEmpty(b))
+   pa(a, b);
+   }
+   */
+// 5 random numbers
 void	sorting_3(t_stack*a, t_stack *b)
 {
 	pb(a, b);
@@ -191,4 +228,4 @@ ft_printf("ra\n");
 }
 }
 }
- */
+*/
