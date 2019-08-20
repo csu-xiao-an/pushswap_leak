@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/17 21:49:36 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 01:42:04 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,19 @@ void	sorting_1(t_stack *a)
 	free(nbr);
 }
 
+void	sorting_2(t_stack *a, t_stack *b)
+{
+//	int	*arr;
+//	while (!isEmpty(a)) {
+		insertionSort(a);
+//	}
+	ft_printf("\nCHECKPOINT\n");
+	ft_printf("null = *s\n", b->top);
+//	free(arr);
+}
+
+// jaimie's sorting algorithm
+/*
 void	chunk_sorting(t_stack *a, int range)
 {
 	int	top_min;
@@ -57,6 +70,7 @@ void	chunk_sorting(t_stack *a, int range)
 	{
 	}
 }
+
 
 void	sorting_2(t_stack *a, t_stack *b)
 {
@@ -81,9 +95,8 @@ void	sorting_2(t_stack *a, t_stack *b)
 		range = find_range(nbr, 10);
 	}
 	ft_printf("range = %d, nbr->min = %d, nbr->max = %d\n", range, nbr->min, nbr->max);
-	ft_printf("null = *s\n", b->top);
 }
- 
+*/ 
 /*
    void	sorting_2(t_stack *a, t_stack *b)
    {

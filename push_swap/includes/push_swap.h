@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 23:11:32 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/17 19:58:06 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 01:42:02 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void	find_mid(t_stack *a, t_struct *nbr);
 int		is_sorted(t_stack *a);
 int		find_range(t_struct *nbr, int div);
 
+int		*letsSort(int *arr, int n);
+void	insertionSort(t_stack *a);
 void	print_stack(struct s_stack *stack);
 /*
 void	sortedInsert(t_stack *a, int x);
