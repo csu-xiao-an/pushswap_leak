@@ -6,12 +6,12 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 01:17:14 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 01:42:08 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 16:30:00 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-/*
+
 int		*letsSort(int *arr, int n)
 {
 	int	i, key, j;
@@ -27,15 +27,13 @@ int		*letsSort(int *arr, int n)
 	}
 	return(arr);
 }
-*/
 
-void	insertionSort(t_stack *a)
+int		*insertionSort(t_stack *a)
 {
 	int	i;
-//	int	n = check_nbr(a);
-	int	*arr = NULL;
-//	int	*arr = (int*)malloc(sizeof(n));
-//	int	*sortedArr;
+	int	n = check_nbr(a);
+	int	*arr = (int*)malloc(sizeof(int) * (n + 1));
+	int	*sortedArr;
 	t_node	*tmp;
 
 	i = 0;
@@ -43,11 +41,10 @@ void	insertionSort(t_stack *a)
 	while (tmp)
 	{
 		arr[i] = tmp->value;
-		ft_printf("%d ", arr[i]);
 		i++;
 		tmp = tmp->next;
 	}
 	arr[i] = '\0';
-//	sortedArr = letsSort(arr, n);
-//	return (arr);
+	sortedArr = letsSort(arr, n);
+	return (sortedArr);
 }

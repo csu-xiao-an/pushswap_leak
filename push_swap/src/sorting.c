@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 01:42:04 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 20:05:07 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,42 @@ void	sorting_1(t_stack *a)
 
 void	sorting_2(t_stack *a, t_stack *b)
 {
-//	int	*arr;
-//	while (!isEmpty(a)) {
-		insertionSort(a);
-//	}
-	ft_printf("\nCHECKPOINT\n");
-	ft_printf("null = *s\n", b->top);
+	int	*arr;
+	int	count;
+	t_pivot	*new;
+	int	bot;
+
+	bot = 0;
+	new = init_pivot();
+	while (!isEmpty(a)) {
+		count = 0;
+		arr = insertionSort(a);
+		find_pivot(a, arr, new);
+		while (count < new->left_nbr) {
+			bot = find_bot(a);
+			if (a->top->value < new->i_value) {
+				pb(a, b);
+				count++;
+			}
+			else if (bot < new->i_value) {
+				rra(a);
+				pb(a, b);
+				count++;
+			}
+			else
+				ra(a);
+		}
+		if (check_nbr(a) == 1)
+			pb(a, b); //break ;?
+	}
+	ft_printf("\nstack b\n");
+	print_stack(b);
+	ft_printf("b->top->value : %d\n", b->top->value);
+	b_to_a(a, b);
+	ft_printf("\nstack a\n");
+	print_stack(a);
 //	free(arr);
+//	free(new);
 }
 
 // jaimie's sorting algorithm

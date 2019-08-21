@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 23:11:32 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 01:42:02 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 20:04:16 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ typedef struct	s_struct {
 	int	max;
 	int	mid;
 }				t_struct;
+
+typedef struct	s_pivot {
+	int	index;
+	int	i_value;
+	int	left_nbr;
+}				t_pivot;
 
 struct s_stack		*initstack(void);
 int					isEmpty(struct s_stack *stack);
@@ -58,6 +64,7 @@ void	sorting_1(t_stack *a);
 void	sorting_2(t_stack *a, t_stack *b);
 void	sorting_3(t_stack *a, t_stack *b);
 t_struct	*init_nbr(void);
+t_pivot		*init_pivot(void);
 void	check_value(t_stack *a, t_struct *nbr);
 int		find_index(t_stack *a, int min);
 int		find_min(t_stack *a);
@@ -66,9 +73,13 @@ void	find_mid(t_stack *a, t_struct *nbr);
 int		is_sorted(t_stack *a);
 int		find_range(t_struct *nbr, int div);
 
+int		find_bot(t_stack *a);
+void	find_pivot(t_stack *a, int *arr, t_pivot *p);
 int		*letsSort(int *arr, int n);
-void	insertionSort(t_stack *a);
+int		*insertionSort(t_stack *a);
 void	print_stack(struct s_stack *stack);
+
+void	b_to_a(t_stack *a, t_stack *b);
 /*
 void	sortedInsert(t_stack *a, int x);
 //void	magic(t_stack *a);

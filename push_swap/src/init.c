@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:47:00 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/17 21:49:34 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 16:30:54 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@ t_struct	*init_nbr(void)
 	new->mid = 0;
 	new->max = 0;
 	new->min = 0;
+	return (new);
+}
+
+t_pivot		*init_pivot(void)
+{
+	struct s_pivot	*new = malloc(sizeof(struct s_pivot));
+
+	new->index = 0;
+	new->i_value = 0;
+	new->left_nbr = 0;
 	return (new);
 }
 
