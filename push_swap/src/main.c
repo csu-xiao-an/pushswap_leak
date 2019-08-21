@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 20:42:13 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/16 12:59:30 by thomkim          ###   ########.fr       */
+/*   Updated: 2019/08/20 20:17:58 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	print_stack(struct s_stack *stack)
 {
-	while (stack->top)
+	t_node	*tmp;
+
+	tmp = stack->top;
+	while (tmp)
 	{
-		ft_printf("%d\n", stack->top->value);
-		stack->top = stack->top->next;
+		ft_printf("%d\n", tmp->value);
+		tmp = tmp->next;
 	}
 }
 

@@ -6,7 +6,7 @@
 #    By: minakim <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/18 20:32:41 by minakim           #+#    #+#              #
-#    Updated: 2019/07/18 20:35:36 by minakim          ###   ########.fr        #
+#    Updated: 2019/08/20 20:12:11 by minakim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,7 @@ $(NAME):
 	@echo "File \"push_swap\" created\n"
 
 clean:
-	@/bin/rm -f $(NAME)
-	@rm -f $(LIB_DIR)/libft.a
+	@rm -rf $(OBJ_DIR)
 	@echo "Object File removed\n"
 
 fclean: clean

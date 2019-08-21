@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 20:05:07 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/20 20:19:10 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void	sorting_2(t_stack *a, t_stack *b)
 		if (check_nbr(a) == 1)
 			pb(a, b); //break ;?
 	}
-	ft_printf("\nstack b\n");
-	print_stack(b);
-	ft_printf("b->top->value : %d\n", b->top->value);
+//	ft_printf("\nstack b\n");
+//	print_stack(b);
+//	ft_printf("b->top->value : %d\n", b->top->value);
 	b_to_a(a, b);
-	ft_printf("\nstack a\n");
-	print_stack(a);
+//	ft_printf("\nstack a\n");
+//	print_stack(a);
 //	free(arr);
 //	free(new);
 }
