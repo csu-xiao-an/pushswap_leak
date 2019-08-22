@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 23:11:32 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 20:04:16 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/22 01:18:47 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,12 @@ int		*letsSort(int *arr, int n);
 int		*insertionSort(t_stack *a);
 void	print_stack(struct s_stack *stack);
 
-void	b_to_a(t_stack *a, t_stack *b);
+int		ft_arrlen(int *arr);
+void	b_to_a(t_stack *a, t_stack *b, int *arr);
+
+int		myPower(int n);
+int		find_npower(int n);
+int		*create_arr(int nbr_element);
 /*
 void	sortedInsert(t_stack *a, int x);
 //void	magic(t_stack *a);

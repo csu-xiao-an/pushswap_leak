@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/20 20:19:10 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/22 02:57:58 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,13 @@ void	sorting_2(t_stack *a, t_stack *b)
 	int	count;
 	t_pivot	*new;
 	int	bot;
+	int	*chunk;
+	int	i;
 
 	bot = 0;
+	i = 0;
 	new = init_pivot();
+	chunk = create_arr(check_nbr(a));
 	while (!isEmpty(a)) {
 		count = 0;
 		arr = insertionSort(a);
@@ -76,13 +80,24 @@ void	sorting_2(t_stack *a, t_stack *b)
 			else
 				ra(a);
 		}
-		if (check_nbr(a) == 1)
+		chunk[i] = count;
+		i++;
+		if (check_nbr(a) == 1) {
 			pb(a, b); //break ;?
+			chunk[i] = 1;
+			chunk[i + 1] = '\0';
+		}
 	}
+	int	j = 0;
+	while (chunk[j] != '\0') {
+		ft_printf("%d ", chunk[j]);
+		j++;
+	}
+	ft_printf("\n");
 //	ft_printf("\nstack b\n");
 //	print_stack(b);
 //	ft_printf("b->top->value : %d\n", b->top->value);
-	b_to_a(a, b);
+	b_to_a(a, b, chunk);
 //	ft_printf("\nstack a\n");
 //	print_stack(a);
 //	free(arr);
