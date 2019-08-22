@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 18:48:16 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/22 02:57:53 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/22 13:16:33 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ int		ft_arrlen(int *arr)
 
 int		*insertSort(t_stack *a, int n)
 {
+	int	i;
 	int	*sortedArr;
 	int		*arr = (int*)malloc(sizeof(int) * n + 1);
 	t_node	*tmp;
 
+	i = 0;
 	tmp = a->top;
-	for (int i = 0; i < n; i++)
+	while (i++ < n)
 	{
 		arr[i] = tmp->value;
 		tmp = tmp->next;
@@ -39,20 +41,66 @@ int		*insertSort(t_stack *a, int n)
 	return (sortedArr);
 }
 
+void	a_to_b_sorting(t_stack *a, t_stack *b, int size)
+{
+	t_pivot	*new;
+	t_node	*tmp;
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	tmp = a->top;
+	new = init_pivot();
+	chunk_mid(a, size, new);
+	while (i < size) {
+		if (tmp->value < new->i_value)
+			pb(a, b);
+		else {
+			ra(a);
+			count++;
+		}
+		i++;
+		tmp = a->top;
+	}
+	while (count-- > 0)
+	{
+		rra(a);
+		count--;
+	}
+}
+
 void	chunk_sorting(t_stack *a, t_stack *b, int n)
 {
 	int	*arr;
+	int	num_a;
 	int	count;
 	int	i;
 	t_pivot	*new;
 
 	i = 0;
+	count = 0;
 	new = init_pivot();
 	arr = insertSort(a, n);
 	find_pivot2(arr, new, n);
 	while (i < n)
 	{
-		count = 0;
+		if (b->top->value > new->i_value) {
+			pa(a, b);
+		}
+		else {
+			rb(b);
+			count++;
+		}
+		num_a = n / 2;
+		while (num_a > 2) {
+			a_to_b_sorting(a, b, num_a);
+			num_a = num_a / 2;
+		}
+		i++;
+	}
+	while (count-- > 0) {
+		rrb(b);
 	}
 	//free(arr);
 }
@@ -76,7 +124,6 @@ void	b_to_a(t_stack *a, t_stack *b, int *arr)
 		l--;
 	}
 	ft_printf("len = %d\n", l);
-//	ft_printf("%d , %d \n", a->top->value, b->top->value);
 }
 
 /*

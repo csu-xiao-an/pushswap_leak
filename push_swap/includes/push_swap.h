@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 23:11:32 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/22 01:18:47 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/22 13:18:47 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void	b_to_a(t_stack *a, t_stack *b, int *arr);
 int		myPower(int n);
 int		find_npower(int n);
 int		*create_arr(int nbr_element);
+void	find_pivot2(int *arr, t_pivot *p, int n);
+void	chunk_mid(t_stack *stack, int size, t_pivot *p);
 /*
 void	sortedInsert(t_stack *a, int x);
 //void	magic(t_stack *a);

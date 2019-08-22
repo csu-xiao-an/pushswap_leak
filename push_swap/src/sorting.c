@@ -6,7 +6,7 @@
 /*   By: minakim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 19:10:25 by minakim           #+#    #+#             */
-/*   Updated: 2019/08/22 02:57:58 by minakim          ###   ########.fr       */
+/*   Updated: 2019/08/22 13:46:48 by minakim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	sorting_2(t_stack *a, t_stack *b)
 	}
 	ft_printf("\n");
 //	ft_printf("\nstack b\n");
-//	print_stack(b);
+	print_stack(b);
 //	ft_printf("b->top->value : %d\n", b->top->value);
 	b_to_a(a, b, chunk);
 //	ft_printf("\nstack a\n");
