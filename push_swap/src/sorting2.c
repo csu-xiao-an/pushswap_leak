@@ -124,6 +124,9 @@ void	chunk_a_sorting(t_stack *a, t_stack *b, int size)
 	}
 }
 */
+
+//last
+/*
 void	chunk_sorting(t_stack *a, t_stack *b, int n)
 {
 	int	*arr;
@@ -190,6 +193,8 @@ void	chunk_sorting(t_stack *a, t_stack *b, int n)
 //		chunk_a_sorting(a, b, n - num_a);
 	}
 }
+*/
+
 /*
 void	chunk_sorting(t_stack *a, t_stack *b, int n)
 {

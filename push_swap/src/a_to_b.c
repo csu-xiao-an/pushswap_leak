@@ -1,5 +1,6 @@
 #include "../includes/push_swap.h"
 
+//last
 void	chunk_a_sorting(t_stack *a, t_stack *b, int size)
 {
 	int		*arr;
