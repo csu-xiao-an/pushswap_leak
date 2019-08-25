@@ -87,6 +87,11 @@ int		find_npower(int n);
 int		*create_arr(int nbr_element);
 void	find_pivot2(int *arr, t_pivot *p, int n);
 void	chunk_mid(t_stack *stack, int size, t_pivot *p);
+
+int		*insertSort(t_stack *a, int n);
+void	chunk_sorting(t_stack *a, t_stack *b, int n);
+void	chunk_a_sorting(t_stack *a, t_stack *b, int size);
+char	*is_chunk_sorted(t_stack *s, int n);
 /*
 void	sortedInsert(t_stack *a, int x);
 //void	magic(t_stack *a);

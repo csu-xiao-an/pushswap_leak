@@ -88,14 +88,14 @@ void	sorting_2(t_stack *a, t_stack *b)
 			chunk[i + 1] = '\0';
 		}
 	}
-	int	j = 0;
-	while (chunk[j] != '\0') {
-		ft_printf("%d ", chunk[j]);
-		j++;
-	}
-	ft_printf("\n");
+//	int	j = 0;
+//	while (chunk[j] != '\0') {
+//		ft_printf("%d ", chunk[j]);
+//		j++;
+//	}
+//	ft_printf("\n");
 //	ft_printf("\nstack b\n");
-	print_stack(b);
+//	print_stack(b);
 //	ft_printf("b->top->value : %d\n", b->top->value);
 	b_to_a(a, b, chunk);
 //	ft_printf("\nstack a\n");

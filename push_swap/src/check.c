@@ -100,3 +100,52 @@ int		check_nbr(t_stack *a)
 	}
 	return (count);
 }
+
+char	*is_chunk_sorted(t_stack *s, int n)
+{
+	int	i;
+	int	j;
+	int	a;
+	int	b;
+	char	*answer;
+	int	*arr = (int*)malloc(sizeof(int) * n + 1);
+	t_node	*tmp;
+
+	i = 0;
+	b = 0;
+	a = 0;
+	j = 0;
+	tmp = s->top;
+	if (n == 2) {
+		if (tmp->value < tmp->next->value)
+			answer = "B";
+		else
+			answer = "A";
+		return (answer);
+	}
+	while (i < n)
+	{
+		arr[i] = tmp->value;
+		i++;
+	}
+	arr[i] = '\0';
+	i = 0;
+	while (arr[i])
+	{
+		if (arr[i] > arr[i + 1]) {
+			a++;
+		}
+		else if (arr[i] <= arr[i + 1]) {
+			b++;
+		}
+		i++;
+	}
+	if (b == n)
+		answer = "B";
+	else if (a == n)
+		answer = "A";
+	else
+		answer = "false";
+	free(arr);
+	return (answer);
+}
