@@ -42,7 +42,9 @@ int		mid_point(t_stack *s, int n)
 		tmp = tmp->next;
 	}
 	new_arr = letsSort(arr, n);
-	return (new_arr[n / 2]);
+	i = n % 2 ? n / 2 :  n / 2 - 1;
+//	ft_printf("new_arr[n/2] %d\n", new_arr[n / 2]);
+	return (new_arr[i]);
 }
 
 void	push_to_a(t_stack *a, t_stack *b, int n)
@@ -63,6 +65,7 @@ void	push_to_a(t_stack *a, t_stack *b, int n)
 	tmp = b->top;
 	while (i < n)
 	{
+	//	ft_printf("n : %d\n", n);
 	//	ft_printf("arr : %d\n", arr[i]);
 	//	ft_printf("i : %d, n : %d\n", i, n);
 	//	ft_printf("tmp->value : %d, new->i_value : %d\n", tmp->value, mid);
@@ -86,7 +89,10 @@ void	chunk_sorting(t_stack *a, t_stack *b, int n)
 	int	i;
 
 	i = 1;
+//	ft_printf("----------Stack b-----------\n");
 //	print_stack (b);
+//	ft_printf("----------Stack a-----------\n");
+//	print_stack (a);
 	if (n == 1) {
 	//	ft_printf("n == 1\n");
 		pa(a, b);
@@ -102,8 +108,11 @@ void	chunk_sorting(t_stack *a, t_stack *b, int n)
 			pa(a, b);
 		}
 	}
+//	else if (n >= 3 && n <= 5) {
+//		super_fast(a, b);
+//	}
 	else {
-	//	ft_printf("n : %d\n", n);
+//		ft_printf("chunk n : %d\n", n);
 	//	ft_printf("else\n");
 //		if (ft_strcmp(is_chunk_sorted(b, n), "A") == 0) {
 //			while (n-- > 0)

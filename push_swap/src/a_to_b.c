@@ -1,5 +1,24 @@
 #include "../includes/push_swap.h"
 
+int		mid_point_a(t_stack *a, int n)
+{
+	int	i;
+	int	arr[n];
+	int	*new_arr;
+	t_node	*tmp;
+
+	i = 0;
+	tmp = a->top;
+	while (i < n)
+	{
+		arr[i] = tmp->value;
+		i++;
+		tmp = tmp->next;
+	}
+	new_arr = letsSort(arr, n);
+	return (new_arr[n / 2]);
+}
+
 int		a_to_b(t_stack *a, t_stack *b, int n)
 {
 //	int	*arr;
@@ -11,7 +30,7 @@ int		a_to_b(t_stack *a, t_stack *b, int n)
 
 	i = 0;
 	count = 0;
-	mid = mid_point(a, n);
+	mid = mid_point_a(a, n);
 //	new = init_pivot();
 //	arr = insertSort(a, n);
 //	find_pivot2(arr, new, n);
