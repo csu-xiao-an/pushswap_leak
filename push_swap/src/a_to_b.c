@@ -1,6 +1,39 @@
 #include "../includes/push_swap.h"
 
+int		a_to_b(t_stack *a, t_stack *b, int n)
+{
+//	int	*arr;
+//	t_pivot	*new;
+	int	i;
+	int	mid;
+	int	count;
+	t_node	*tmp;
+
+	i = 0;
+	count = 0;
+	mid = mid_point(a, n);
+//	new = init_pivot();
+//	arr = insertSort(a, n);
+//	find_pivot2(arr, new, n);
+	tmp = a->top;
+	while (i < n)
+	{
+		if (tmp->value < mid)
+			pb(a, b);
+		else {
+			ra(a);
+			count++;
+		}
+		i++;
+		tmp = a->top;
+	}
+	while (count-- > 0)
+		rra(a);
+	return (n / 2);
+}
+
 //last
+/*
 void	chunk_a_sorting(t_stack *a, t_stack *b, int size)
 {
 	int		*arr;
@@ -54,3 +87,4 @@ void	chunk_a_sorting(t_stack *a, t_stack *b, int size)
 		}
 	}
 }
+*/
