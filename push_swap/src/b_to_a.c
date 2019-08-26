@@ -108,9 +108,12 @@ void	chunk_sorting(t_stack *a, t_stack *b, int n)
 			pa(a, b);
 		}
 	}
-//	else if (n >= 3 && n <= 5) {
-//		super_fast(a, b);
-//	}
+	else if (n >= 3 && n <= 5) {
+		super_fast(a, b, n);
+		while (n-- > 0) {
+			pa(a, b);
+		}
+	}
 	else {
 //		ft_printf("chunk n : %d\n", n);
 	//	ft_printf("else\n");

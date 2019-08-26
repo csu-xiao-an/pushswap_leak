@@ -97,6 +97,11 @@ char	*is_chunk_sorted(t_stack *s, int n);
 int		a_to_b(t_stack *a, t_stack *b, int n);
 int		count_arr(int n);
 void	push_to_a(t_stack *a, t_stack *b, int n);
+
+void	check_3_mid(t_stack *s, t_struct *nbr, int n);
+void	check_b_3(t_stack *s, t_struct *nbr, int n);
+void	sort_3(t_stack *s, int n);
+void	super_fast(t_stack *a, t_stack *b, int n);
 /*
 void	sortedInsert(t_stack *a, int x);
 //void	magic(t_stack *a);
